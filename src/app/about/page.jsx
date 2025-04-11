@@ -4,6 +4,7 @@ import ServicesSection from "@/components/services-section";
 import WhyChooseSection from "@/components/why-choose-section";
 import ImpactSection from "@/components/impact-section";
 import CallToAction from "@/components/call-to-action";
+import { HOME_PAGE_CONTENT_DEF } from "@/constants/default";
 import { HOME_PAGE_CONTENT } from "@/constants";
 
 export default function About() {
