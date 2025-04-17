@@ -20,12 +20,18 @@ const __dirname = dirname(__filename);
 
 export default [
   {
-    files: ["**/*.ts", "**/*.tsx"], // Specify file patterns
+    files: ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"], // Include all relevant file types
     languageOptions: {
-      parser: "@typescript-eslint/parser", // Use TypeScript parser
+      parser: "@typescript-eslint/parser", // Use TypeScript parser for JSX support
       ecmaVersion: "latest",
       sourceType: "module",
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true, // Enable JSX parsing
+        },
+      },
     },
+    plugins: ["@typescript-eslint"],
     extends: ["next/core-web-vitals"], // Extend Next.js defaults
     rules: {
       // Add custom rules here if needed
