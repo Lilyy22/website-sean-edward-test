@@ -1,6 +1,7 @@
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
+import typescriptParser from "@typescript-eslint/parser"; // Import the parser directly
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -16,7 +17,7 @@ export default [
   {
     files: ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"], // Include all relevant file types
     languageOptions: {
-      parser: require("@typescript-eslint/parser"), // Explicitly require the parser
+      parser: typescriptParser, // Use the imported parser
       ecmaVersion: "latest",
       sourceType: "module",
       parserOptions: {
