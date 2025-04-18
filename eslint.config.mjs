@@ -11,26 +11,25 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
-// Export the ESLint configuration
 export default [
-  ...compat.extends("next/core-web-vitals"), // Extend Next.js defaults
+  ...compat.extends("next/core-web-vitals"),
   {
-    files: ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"], // Include all relevant file types
+    files: ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
     languageOptions: {
-      parser: typescriptParser, // Use the imported parser
+      parser: typescriptParser,
       ecmaVersion: "latest",
       sourceType: "module",
       parserOptions: {
         ecmaFeatures: {
-          jsx: true, // Enable JSX parsing
+          jsx: true,
         },
       },
     },
     plugins: {
-      "@typescript-eslint": {}, // Define plugins as objects in flat config
+      "@typescript-eslint": {},
     },
     rules: {
-      // Add custom rules here if needed
+      "react/no-unescaped-entities": "off", // Disable the rule globally
     },
   },
 ];
